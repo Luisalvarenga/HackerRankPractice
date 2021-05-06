@@ -33,5 +33,27 @@ namespace ConsoleAppPractice
         }
 
 
+        public int divisibleSumPairs(int n, int k, List<int> ar)
+        {
+            int counterSumPairs = 0;
+
+            for (int i = 0; i < ar.Count; i++)
+            {
+                for (int j = i; j < ar.Count; j++)
+                {
+                    if (i < j)
+                    {
+                        if ((ar[i] + ar[j]) % k == 0)
+                        {
+                            // Console.WriteLine("ar[" + i + "] + ar[" + j + "] = " + ar[i] + " + " + ar[j] + " = " + sum);
+                            counterSumPairs++;
+                        }
+                    }
+                }
+            }
+            return counterSumPairs;
+        }
+
+
     }
 }

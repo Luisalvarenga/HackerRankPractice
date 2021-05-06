@@ -19,14 +19,18 @@ namespace ConsoleAppPractice
         static void Main(string[] args)
         {
 
-            int n = Convert.ToInt32(Console.ReadLine().Trim());
+            string[] firstMultipleInput = Console.ReadLine().TrimEnd().Split(' ');
 
-            List<int> scores = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(scoresTemp => Convert.ToInt32(scoresTemp)).ToList();
+            int n = Convert.ToInt32(firstMultipleInput[0]);
+
+            int k = Convert.ToInt32(firstMultipleInput[1]);
+
+            List<int> ar = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(arTemp => Convert.ToInt32(arTemp)).ToList();
 
             Easy e = new Easy();
-            List<int> result = e.breakingTheRecords(scores);
+            int result = e.divisibleSumPairs(n, k, ar);
 
-            Console.WriteLine(String.Join(" ", result));
+            Console.WriteLine(result);
 
             Console.Read();
         }
